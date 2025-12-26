@@ -52,14 +52,14 @@ bookStoreTitle.textContent = bookStore.name;
 
 // DOM manipulation function
 function listCatalog(bookStore) {
-    for (var i = 0; i < bookStore.books.length; i++) {
-        var book = bookStore.books[i];
+    for (let i = 0; i < bookStore.books.length; i++) {
+        const book = bookStore.books[i];
 
         // Create elements
-        var bookContainer = document.createElement('li');
-        var bookTitle = document.createElement('h3');
-        var bookAuthor = document.createElement('p');
-        var bookImage = document.createElement('img');
+        const bookContainer = document.createElement('li');
+        const bookTitle = document.createElement('h3');
+        const bookAuthor = document.createElement('p');
+        const bookImage = document.createElement('img');
 
         // Set content
         bookTitle.textContent = book.title;
