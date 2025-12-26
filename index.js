@@ -43,5 +43,36 @@ const bookStore = {
     ]
 }
 
-// Write your code here!
+// DOM targets - variable assignment
+const bookStoreTitle = document.querySelector("#header");
+const bookList = document.querySelector("#book-list");
 
+// Change title to bookstore name
+bookStoreTitle.textContent = bookStore.name;
+
+// DOM manipulation function
+function listCatalog(bookStore) {
+    for (var i = 0; i < bookStore.books.length; i++) {
+        var book = bookStore.books[i];
+
+        // Create elements
+        var bookContainer = document.createElement('li');
+        var bookTitle = document.createElement('h3');
+        var bookAuthor = document.createElement('p');
+        var bookImage = document.createElement('img');
+
+        // Set content
+        bookTitle.textContent = book.title;
+        bookAuthor.textContent = book.author;
+        bookImage.src = book.imageUrl;
+        bookImage.alt = book.title;
+
+        // Append elements
+        bookContainer.appendChild(bookTitle);
+        bookContainer.appendChild(bookAuthor);
+        bookContainer.appendChild(bookImage);
+        bookList.appendChild(bookContainer);
+    }
+}
+
+listCatalog(bookStore);
